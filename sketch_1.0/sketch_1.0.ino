@@ -1,8 +1,11 @@
-int lBkTire = 0; //Reading from linear potentiometer from left back tire
-int lFtTire = 0; // " " " " " left front tire
-int rBkTire = 0; // " " " " " right back tire
-int rFtTire = 0; // " " " " " right front tire
-int input=A0;
+float lBkTire = 0; //Reading from linear potentiometer from left back tire
+float lFtTire = 0; // " " " " " left front tire
+float rBkTire = 0; // " " " " " right back tire
+float rFtTire = 0; // " " " " " right front tire
+int lbInput=A0;
+int lfInput=A1;
+int rbInput=A2;
+int rfInput=A3;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -10,10 +13,10 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  lBkTire = analogRead(input);
-  //lFtTire = analogRead(2);
-  //rBkTire = analogRead(3);
-  //rFtTire = analogRead(4);
+  lBkTire = (0.0155 * analogRead(lbInput)) + 0.164; //*INCHES
+  //lFtTire = analogRead(lfInput);
+  //rBkTire = analogRead(rbInput);
+  //rFtTire = analogRead(rfInput);
   Serial.println(lBkTire); 
   delay(100);
 }
