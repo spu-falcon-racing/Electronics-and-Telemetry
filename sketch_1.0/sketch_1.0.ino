@@ -13,10 +13,17 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+  //TIRE POTENTIOMETER READINGS
   lBkTire = (0.0155 * analogRead(lbInput)) + 0.164; //*INCHES
-  //lFtTire = analogRead(lfInput);
-  //rBkTire = analogRead(rbInput);
-  //rFtTire = analogRead(rfInput);
+  lFtTire = (0.0155 * analogRead(lfInput)) + 0.164; //*INCHES
+  rBkTire = (0.0155 * analogRead(rbInput)) + 0.164; //*INCHES
+  rFtTire = (0.0155 * analogRead(rfInput)) + 0.164; //*INCHES
   Serial.println(lBkTire); 
-  delay(100);
+  Serial.println(lFtTire); 
+  Serial.println(rBkTire); 
+  Serial.println(rFtTire); 
+  delay(200);
+
+  
 }
