@@ -6,6 +6,7 @@ int lbInput=A0;
 int lfInput=A1;
 int rbInput=A2;
 int rfInput=A3;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
